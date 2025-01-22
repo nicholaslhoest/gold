@@ -8,9 +8,17 @@ build:
 
 deploy:
   stage: deploy
+  only:
+    - main
   before_script:
+    # Install Google Cloud SDK
+    - curl -sSL https://sdk.cloud.google.com | bash
+    - source "$HOME/.bashrc"
+
+    # Decode the service account key and authenticate
     - echo "$GOOGLE_APPLICATION_CREDENTIALS" | base64 -d > /tmp/service-account.json
     - gcloud auth activate-service-account --key-file=/tmp/service-account.json
     - gcloud config set project $GOOGLE_CLOUD_PROJECT
+
   script:
     - gsutil -m cp -r ./dist/* gs://$GOOGLE_CLOUD_BUCKET/

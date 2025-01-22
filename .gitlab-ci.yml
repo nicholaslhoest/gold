@@ -1,0 +1,16 @@
+image: node:latest
+
+build:
+  stage: build
+  script:
+    - npm install
+    - npm run astro --build
+
+deploy:
+  stage: deploy
+  before_script:
+    - echo "$GOOGLE_APPLICATION_CREDENTIALS" | base64 -d > /tmp/service-account.json
+    - gcloud auth activate-service-account --key-file=/tmp/service-account.json
+    - gcloud config set project $GOOGLE_CLOUD_PROJECT
+  script:
+    - gsutil -m cp -r ./dist/* gs://$GOOGLE_CLOUD_BUCKET/

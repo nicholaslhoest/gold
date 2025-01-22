@@ -3,6 +3,7 @@ image: google/cloud-sdk:latest
 build:
   stage: build
   script:
+    - apt-get update && apt-get install -y npm
     - npm install
     - npm run astro --build
 

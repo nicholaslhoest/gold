@@ -18,7 +18,7 @@ deploy:
   only:
     - main
   script:
-    - echo $GOOGLE_APPLICATION_CREDENTIALS | base64 -d > gcloud-service-key.json
+    - base64 --decode encodedFile.txt > gcloud-service-key.json
     - gcloud auth activate-service-account --key-file gcloud-service-key.json
     - gcloud config set project $GOOGLE_CLOUD_PROJECT
     - gsutil -m rsync -R dist/* gs://$GOOGLE_CLOUD_BUCKET/

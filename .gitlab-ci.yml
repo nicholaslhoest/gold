@@ -1,18 +1,26 @@
-image: google/cloud-sdk:latest
+stages:
+  - build
+  - deploy
 
 build:
+  image: node:18
   stage: build
   script:
-    - apt-get update && apt-get install -y npm
     - npm install
-    - npm run astro --build
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
 
 deploy:
+  image: google/cloud-sdk:latest
   stage: deploy
   only:
     - main
   script:
-    - echo "$GOOGLE_APPLICATION_CREDENTIALS" | base64 -d > /tmp/service-account.json
-    - gcloud auth activate-service-account --key-file=/tmp/service-account.json
+    - echo $GOOGLE_APPLICATION_CREDENTIALS | base64 -d > gcloud-service-key.json
+    - gcloud auth activate-service-account --key-file gcloud-service-key.json
     - gcloud config set project $GOOGLE_CLOUD_PROJECT
-    - gsutil -m cp -r ./dist/* gs://$GOOGLE_CLOUD_BUCKET/
+    - gsutil -m rsync -R dist/* gs://$GOOGLE_CLOUD_BUCKET/
+  dependencies:
+    - build

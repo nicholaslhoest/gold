@@ -18,11 +18,22 @@ deploy:
   only:
     - main
   script:
-    - echo $GOOGLE_APPLICATION_CREDENTIALS | base64 --decode > gcloud-service-key.json
-    - sudo apt install jq -y
-    - jq . gcloud-service-key.json
-    - gcloud auth activate-service-account --key-file=gcloud-service-key.json
+    # Decode the Base64-encoded service account JSON and save it as a file
+    - echo "$GOOGLE_APPLICATION_CREDENTIALS" | tr -d '\n' | base64 --decode > /tmp/gcloud-service-key.json
+    
+    # Activate the Google Cloud service account
+    - gcloud auth activate-service-account --key-file=/tmp/gcloud-service-key.json
+    
+    # Set the Google Cloud project
     - gcloud config set project $GOOGLE_CLOUD_PROJECT
-    - gsutil -m rsync -R dist/* gs://$GOOGLE_CLOUD_BUCKET/
+    
+    # Verify the authentication is successful
+    - gcloud auth list
+
+    # Push the "dist" directory to the Google Cloud Storage bucket
+    - gsutil -m rsync -R dist/ gs://$GOOGLE_CLOUD_BUCKET/
+    
+    # Optionally, you can clear up any sensitive data after the deploy
+    - rm /tmp/gcloud-service-key.json
   dependencies:
     - build

@@ -1,30 +1,36 @@
 ---
-import { getEntry, getCollection, render } from 'astro:content';
+import { getCollection, getEntryBySlug, render } from 'astro:content';
+import DefaultLayout from '../../layouts/Markdownlayout.astro';
 import "../../styles/global.css";
 import Navigation from "../../components/Navigation.astro";
+import Markdownlayout from "../../layouts/Markdownlayout.astro";
+import Footer from "../../components/Footer.astro";
 
+// Define getStaticPaths to fetch dynamic routes
 export async function getStaticPaths() {
     const papers = await getCollection("papers");
-
     return papers.map((paper) => ({
-        params: { slug: encodeURIComponent(paper.slug) },
+        params: { slug: paper.slug },
     }));
 }
 
 const { slug } = Astro.params;
-const paper = await getEntry("papers", slug);
+const paper = await getEntryBySlug("papers", slug);
 
 if (!paper) {
     throw new Error(`Paper not found: ${slug}`);
 }
 
-const { Content } = await render(paper);
+const { Content } = await render(paper);  // Render Markdown body content
 ---
+<Navigation />
 
-<Navigation/>
-<h1>{paper.data.title}</h1>
-<p> {paper.data.author} </p>
-<p> {paper.data.date} </p>
-<p> tags: {paper.data.tags.join(", ")}</p>
-
-<Content />
+<!-- Use the layout, passing content as children -->
+<Markdownlayout
+        title={paper.data.title}
+        author={paper.data.author}
+        date={paper.data.date}
+        tags={paper.data.tags}
+>
+    <Content />
+</Markdownlayout>

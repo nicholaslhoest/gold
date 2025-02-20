@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import "../../styles/global.css";
 import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
 
 // Function to convert title into a slug
 const convertToSlug = (title) => {
@@ -22,7 +23,7 @@ const papers = await getCollection('papers');
             <li class="listPaperItem">
                 <a class="listPaperItem" href={`/papers/${paper.slug}/`}>
                     <strong>{paper.data.title}</strong>
-                    <p>{paper.data.date} | {paper.data.tags} </p>
+                    <p>{paper.data.date} | {paper.data.tags.join(", ")} </p>
                 </a>
             </li>
     ))}

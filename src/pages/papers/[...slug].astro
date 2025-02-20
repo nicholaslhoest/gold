@@ -1,0 +1,30 @@
+---
+import { getEntry, getCollection, render } from 'astro:content';
+import "../../styles/global.css";
+import Navigation from "../../components/Navigation.astro";
+
+export async function getStaticPaths() {
+    const papers = await getCollection("papers");
+
+    return papers.map((paper) => ({
+        params: { slug: encodeURIComponent(paper.slug) },
+    }));
+}
+
+const { slug } = Astro.params;
+const paper = await getEntry("papers", slug);
+
+if (!paper) {
+    throw new Error(`Paper not found: ${slug}`);
+}
+
+const { Content } = await render(paper);
+---
+
+<Navigation/>
+<h1>{paper.data.title}</h1>
+<p> {paper.data.author} </p>
+<p> {paper.data.date} </p>
+<p> tags: {paper.data.tags.join(", ")}</p>
+
+<Content />

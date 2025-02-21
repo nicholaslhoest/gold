@@ -1,10 +1,8 @@
 ---
 import { getCollection, getEntryBySlug, render } from 'astro:content';
-import DefaultLayout from '../../layouts/Markdownlayout.astro';
 import "../../styles/global.css";
 import Navigation from "../../components/Navigation.astro";
 import Markdownlayout from "../../layouts/Markdownlayout.astro";
-import Footer from "../../components/Footer.astro";
 
 // Define getStaticPaths to fetch dynamic routes
 export async function getStaticPaths() {
@@ -22,15 +20,24 @@ if (!paper) {
 }
 
 const { Content } = await render(paper);  // Render Markdown body content
+
+
+const inputString = paper.slug;
+
+// Split by hyphen
+const parts = inputString.split('-');
+
+// Get the middle value (index 1)
+const middleValue = parts[1];
+
 ---
 <Navigation />
 
-<!-- Use the layout, passing content as children -->
 <Markdownlayout
         title={paper.data.title}
-        author={paper.data.author}
         date={paper.data.date}
         tags={paper.data.tags}
 >
+    Paper {middleValue}
     <Content />
 </Markdownlayout>

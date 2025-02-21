@@ -14,8 +14,7 @@ const { title, author, date, tags, children } = Astro.props;
         <article>
             <header>
                 <h1>{title}</h1>
-                <p>By: {author}</p>
-                <p>Date: {date}</p>
+                <strong>Date: {date}</strong>
                 <p>Tags: {tags.join(", ")}</p>
             </header>
             <main>

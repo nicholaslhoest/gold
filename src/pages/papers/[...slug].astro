@@ -2,7 +2,7 @@
 import { getCollection, getEntryBySlug, render } from 'astro:content';
 import "../../styles/global.css";
 import Navigation from "../../components/Navigation.astro";
-import Markdownlayout from "../../layouts/Markdownlayout.astro";
+import MarkdownLayout from "../../layouts/MarkdownLayout.astro";
 
 // Define getStaticPaths to fetch dynamic routes
 export async function getStaticPaths() {
@@ -33,11 +33,11 @@ const middleValue = parts[1];
 ---
 <Navigation />
 
-<Markdownlayout
+<MarkdownLayout
         title={paper.data.title}
         date={paper.data.date}
         tags={paper.data.tags}
 >
     Paper {middleValue}
     <Content />
-</Markdownlayout>
+</MarkdownLayout>

@@ -1,0 +1,43 @@
+---
+import { getCollection, getEntryBySlug, render } from 'astro:content';
+import "../../styles/global.css";
+import Navigation from "../../components/Navigation.astro";
+import MarkdownLayout from "../../layouts/MarkdownLayout.astro";
+
+// Define getStaticPaths to fetch dynamic routes
+export async function getStaticPaths() {
+    const papers = await getCollection("papers");
+    return papers.map((paper) => ({
+        params: { slug: paper.slug },
+    }));
+}
+
+const { slug } = Astro.params;
+const paper = await getEntryBySlug("papers", slug);
+
+if (!paper) {
+    throw new Error(`Paper not found: ${slug}`);
+}
+
+const { Content } = await render(paper);  // Render Markdown body content
+
+
+const inputString = paper.slug;
+
+// Split by hyphen
+const parts = inputString.split('-');
+
+// Get the middle value (index 1)
+const middleValue = parts[1];
+
+---
+<Navigation />
+
+<MarkdownLayout
+        title={paper.data.title}
+        date={paper.data.date}
+        tags={paper.data.tags}
+>
+    Paper {middleValue}
+    <Content />
+</MarkdownLayout>

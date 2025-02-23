@@ -1,21 +1,26 @@
 ---
-import "../styles/global.css";
-import Navigation from "../components/Navigation.astro"
+// Default layout to wrap content with reusable structure
 
-const { frontmatter } = Astro.props
+import Footer from "../components/Footer.astro";
+const { title, author, date, tags, children } = Astro.props;
 ---
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="utf-8">
-        <title>{frontmatter.title}</title>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> {title} </title>
+</head>
     <body>
-    <Navigation/>
-        <h1>{frontmatter.title} </h1>
-        <p> Written by {frontmatter.author} </p>
-        <p> post: {frontmatter.post} </p>
-        <p> tags: {frontmatter.tags} </p>
-        <slot />
+        <article>
+            <header>
+                <h1>{title}</h1>
+                <strong>Date: {date}</strong>
+                <p>Tags: {tags.join(", ")}</p>
+            </header>
+            <main>
+                <slot/>
+            </main>
+        </article>
     </body>
+<Footer />
 </html>

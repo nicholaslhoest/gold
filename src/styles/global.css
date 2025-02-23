@@ -5,9 +5,36 @@ html {
 body {
     margin: 0 auto;
     width: 100%;
-    max-width: 80ch;
+    max-width: 60ch;
     padding: 1rem;
     line-height: 1.5;
     font-style: normal;
     font-family: sans-serif;
+    color: black;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none; /* Removes underline */
+    color: orangered; /* Changes text color to black */
+    margin: 0 20px 0 0;
+}
+
+a.listPaperItem {
+    text-decoration: none; /* Removes underline */
+    color: black; /* Changes text color to black */
+}
+
+a:hover {
+    color: black;
+}
+
+ul.listPaperItem {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li.listPaperItem {
+    margin-right: 0;  /* Ensure no extra space on the right of list items */
 }

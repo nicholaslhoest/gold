@@ -1,6 +1,6 @@
 ---
 title: 'How I Created My Unsuccessful Design Subscription Service from Idea to Launch.'
-date: '2024-03-27'
+date: '2024-04-12'
 description: 'Paper explaining 5 difference misconceptions for creating logos.'
 author: 'Nicholas B. Lhoest'
 tags: ["design","logo"]

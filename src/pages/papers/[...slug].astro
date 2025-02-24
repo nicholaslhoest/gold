@@ -4,7 +4,6 @@ import "../../styles/global.css";
 import Navigation from "../../components/Navigation.astro";
 import MarkdownLayout from "../../layouts/MarkdownLayout.astro";
 
-// Define getStaticPaths to fetch dynamic routes
 export async function getStaticPaths() {
     const papers = await getCollection("papers");
     return papers.map((paper) => ({
@@ -21,6 +20,7 @@ if (!paper) {
 
 const { Content } = await render(paper);  // Render Markdown body content
 
+const wpm = Math.round((paper.body.length/5)/214);
 
 const inputString = paper.slug;
 
@@ -34,10 +34,11 @@ const middleValue = parts[1];
 <Navigation />
 
 <MarkdownLayout
+        number={middleValue}
         title={paper.data.title}
         date={paper.data.date}
+        time={wpm}
         tags={paper.data.tags}
 >
-    Paper {middleValue}
     <Content />
 </MarkdownLayout>

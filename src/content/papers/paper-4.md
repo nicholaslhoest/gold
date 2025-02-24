@@ -1,8 +1,6 @@
 ---
-title: 'How I Created My Unsuccessful Design Subscription Service from Idea to Launch.'
+title: 'How I created my unsuccessful design subscription service from idea to launch.'
 date: '2024-04-12'
-description: 'Paper explaining 5 difference misconceptions for creating logos.'
-author: 'Nicholas B. Lhoest'
 tags: ["design","logo"]
 ---
 I will outline how I built my design subscription business, LhoestBrands, from concept to launch.

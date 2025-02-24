@@ -16,7 +16,7 @@ body {
 
 a {
     text-decoration: none; /* Removes underline */
-    color: orangered; /* Changes text color to black */
+    color: #b42a18; /* Changes text color to black */
     margin: 0 20px 0 0;
 }
 
@@ -37,4 +37,12 @@ ul.listPaperItem {
 
 li.listPaperItem {
     margin-right: 0;  /* Ensure no extra space on the right of list items */
+}
+
+div.tagElement {
+    display: flex;
+}
+
+.tagElementColor{
+    color: #b42a18;
 }

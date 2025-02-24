@@ -1,8 +1,7 @@
 ---
-// Default layout to wrap content with reusable structure
-
 import Footer from "../components/Footer.astro";
-const { title, author, date, tags, children } = Astro.props;
+import "../styles/global.css";
+const { number, title, date, time, tags } = Astro.props;
 ---
 <html lang="en">
 <head>
@@ -13,9 +12,14 @@ const { title, author, date, tags, children } = Astro.props;
     <body>
         <article>
             <header>
+                <p>Paper {number}</p>
                 <h1>{title}</h1>
-                <strong>Date: {date}</strong>
-                <p>Tags: {tags.join(", ")}</p>
+                <strong>{date}</strong> | {time} min read
+                <div class="tagElement">
+                    <img style="margin-right: 10px"  src="/tag.svg" alt="Tag Icon in black and white" />
+                    <p class="tagElementColor"> {tags.join(", ")}</p>
+                </div>
+
             </header>
             <main>
                 <slot/>

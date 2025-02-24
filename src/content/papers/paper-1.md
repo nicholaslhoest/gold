@@ -1,8 +1,6 @@
 ---
-title: 'The 5 Hard Truths a Designer Needs to Hear About Logos.'
+title: 'The 5 hard truths a designer needs to hear about logos.'
 date: '2024-03-27'
-description: 'Paper explaining 5 difference misconceptions for creating logos.'
-author: 'Nicholas B. Lhoest'
 tags: ["design"]
 ---
 In today’s visually driven world, logos, from multinational corporations to local businesses and even personal brands, have become even more essential to our daily lives.

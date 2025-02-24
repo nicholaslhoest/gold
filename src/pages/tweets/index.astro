@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import "../../styles/global.css";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+
+const tweets = await getCollection('tweets');
+---
+<Navigation/>
+<h1>Tweets</h1>
+
+<ul class="listPaperItem" >
+    {tweets.map(tweet => (
+            <li class="listPaperItem" style="margin: 10px">
+                <p> Nicholas B. Lhoest <b> @nicholaslhoest </b> | {tweet.data.date}</p>
+                <p> {tweet.body} </p>
+            </li>
+
+        <br />
+    ))}
+</ul>

@@ -3,26 +3,17 @@ import { getCollection } from 'astro:content';
 import "../../styles/global.css";
 import Navigation from "../../components/Navigation.astro";
 
-// Function to convert title into a slug
-const convertToSlug = (title) => {
-    return title
-    .toLowerCase() // Convert to lowercase
-    .replace(/[^\w\s-]/g, '') // Remove special characters
-    .replace(/\s+/g, '-') // Replace spaces with hyphens
-    .trim(); // Remove any leading or trailing spaces
-};
-
 const papers = await getCollection('papers');
 ---
 <Navigation/>
-<h2>Papers</h2>
+<h1>Papers</h1>
 
 <ul class="listPaperItem">
     {papers.map(paper => (
             <li class="listPaperItem">
                 <a class="listPaperItem" href={`/papers/${paper.slug}/`}>
                     <strong>{paper.data.title}</strong>
-                    <p>{paper.data.date} | {paper.data.tags.join(", ")} </p>
+                    <p> {paper.data.date} | {paper.data.tags.join(", ")} </p>
                 </a>
             </li>
     ))}

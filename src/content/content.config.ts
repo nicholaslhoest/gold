@@ -11,11 +11,4 @@ const papers = defineCollection({
     }),
 });
 
-const tweets = defineCollection({
-    loader: glob({ pattern: "**/*.md", base: "./src/content/tweets" }),
-    schema: z.object({
-        date: z.string(),
-    }),
-});
-
-export const collections = { papers, tweets };
+export const collections = { papers };

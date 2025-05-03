@@ -46,3 +46,11 @@ div.tagElement {
 .tagElementColor{
     color: #b42a18;
 }
+
+.navbar {
+    align-items: center;
+}
+
+.navbar img {
+    margin-right: 1rem;
+}

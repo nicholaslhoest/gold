@@ -3,6 +3,7 @@ import { getCollection, getEntryBySlug, render } from 'astro:content';
 import "../../styles/global.css";
 import Navigation from "../../components/Navigation.astro";
 import PaperLayout from "../../layouts/PaperLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
     const papers = await getCollection("papers");
@@ -31,14 +32,15 @@ const parts = inputString.split('-');
 const middleValue = parts[1];
 
 ---
-<Navigation />
+<BaseLayout>
+    <PaperLayout
+            number={middleValue}
+            title={paper.data.title}
+            date={paper.data.date}
+            time={wpm}
+            tags={paper.data.tags}
+    >
+        <Content />
+    </PaperLayout>
+</BaseLayout>
 
-<PaperLayout
-        number={middleValue}
-        title={paper.data.title}
-        date={paper.data.date}
-        time={wpm}
-        tags={paper.data.tags}
->
-    <Content />
-</PaperLayout>

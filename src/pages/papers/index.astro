@@ -2,19 +2,23 @@
 import { getCollection } from 'astro:content';
 import "../../styles/global.css";
 import Navigation from "../../components/Navigation.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const papers = await getCollection('papers');
 ---
-<Navigation/>
-<h1>Papers</h1>
 
-<ul class="listPaperItem">
-    {papers.map(paper => (
-            <li class="listPaperItem">
-                <a class="listPaperItem" href={`/papers/${paper.slug}/`}>
-                    <strong>{paper.data.title}</strong>
-                    <p> {paper.data.date} | {paper.data.tags.join(", ")} </p>
-                </a>
-            </li>
-    ))}
-</ul>
+<BaseLayout>
+
+    <h1 class="text-5xl font-bold">Papers</h1>
+    <ul class="listPaperItem">
+        {papers.map(paper => (
+                <li class="listPaperItem">
+                    <a class="listPaperItem" href={`/papers/${paper.slug}/`}>
+                        <strong>{paper.data.title}</strong>
+                        <p> {paper.data.date} | {paper.data.tags.join(", ")} </p>
+                    </a>
+                </li>
+        ))}
+    </ul>
+</BaseLayout>
+

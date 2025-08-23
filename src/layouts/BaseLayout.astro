@@ -1,0 +1,39 @@
+---
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import Sidebar from "../components/Sidebar.astro";
+
+const {title, date, time, tags } = Astro.props;
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{{title}}</title>
+</head>
+<body data-theme="bumblebee" class="min-h-screen">
+<!-- LEFT SIDEBAR (overlay + takes space on lg+) -->
+<header role="navigation"
+        class="fixed inset-y-0 left-0 w-[18rem] bg-base-200 border-r z-40 hidden lg:block">
+    <Sidebar />
+</header>
+
+<!-- OPTIONAL: mobile overlay version (shown with a toggle you add elsewhere) -->
+<!-- <aside class="fixed inset-y-0 left-0 w-[18rem] bg-base-200 border-r z-50 lg:hidden hidden" id="mobile-drawer">
+  <Sidebar />
+</aside> -->
+
+<!-- RIGHT CONTENT (shifted by sidebar width on lg+) -->
+<main class="min-h-screen lg:ml-[18rem]">
+    <div class="mx-auto max-w-prose px-4 sm:px-6 lg:px-8 py-10">
+        <slot />
+    </div>
+</main>
+
+<footer class="lg:ml-[18rem] px-4 sm:px-6 lg:px-8 py-6">
+    <Footer />
+</footer>
+</body>

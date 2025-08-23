@@ -1,35 +1,12 @@
 ---
-import Navigation from '../components/Navigation.astro';
-import "../styles/global.css";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const title = "Nicholas B. Lhoest Official Site";
 ---
 
-<html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<meta name="generator" content={Astro.generator} />
-	<title>Nicholas B. Lhoest Official Site</title>
-</head>
-<body>
-
-
-<header>
-	<Navigation />
-</header>
-
-<section>
-	<h1> Good Morning </h1>
-
-	<p> I’m gonna be the Pirate King. </p>
-
+<BaseLayout {title}>
+	<h1> Nicholas B. Lhoest </h1>
+	<h2> Analyst at Accenture </h2>
 	<p>
-		This is my little corner of the internet, my own space. I spend my time managing projects, building something real, and chasing my idea of freedom, wherever that takes me.
+		Nicholas graudate from Bournemouth University with a Games Techonolgy degree and a Graduated with an master degree from the University of Glasgow with a Computer Science Degree
 	</p>
-
-</section>
-
-</body>
-	<Footer />
-</html>
+</BaseLayout>

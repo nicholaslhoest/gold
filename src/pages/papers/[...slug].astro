@@ -2,7 +2,7 @@
 import { getCollection, getEntryBySlug, render } from 'astro:content';
 import "../../styles/global.css";
 import Navigation from "../../components/Navigation.astro";
-import MarkdownLayout from "../../layouts/MarkdownLayout.astro";
+import PaperLayout from "../../layouts/PaperLayout.astro";
 
 export async function getStaticPaths() {
     const papers = await getCollection("papers");
@@ -33,7 +33,7 @@ const middleValue = parts[1];
 ---
 <Navigation />
 
-<MarkdownLayout
+<PaperLayout
         number={middleValue}
         title={paper.data.title}
         date={paper.data.date}
@@ -41,4 +41,4 @@ const middleValue = parts[1];
         tags={paper.data.tags}
 >
     <Content />
-</MarkdownLayout>
+</PaperLayout>

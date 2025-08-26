@@ -16,7 +16,6 @@ const { number, title, date, time, tags } = Astro.props;
                 <h1>{title}</h1>
                 <strong>{date}</strong> | {time} min read
                 <div class="tagElement">
-                    <img style="margin-right: 10px"  src="/tag.svg" alt="Tag Icon in black and white" />
                     <p class="tagElementColor"> {tags.join(", ")}</p>
                 </div>
 

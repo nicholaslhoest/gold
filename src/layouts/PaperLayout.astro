@@ -1,29 +1,36 @@
 ---
-import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 const { number, title, date, time, tags } = Astro.props;
 ---
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> {title} </title>
+    <title>{title}</title>
 </head>
-    <body>
-        <article>
-            <header>
-                <p>Paper {number}</p>
-                <h1>{title}</h1>
-                <strong>{date}</strong> | {time} min read
-                <div class="tagElement">
-                    <img style="margin-right: 10px"  src="/tag.svg" alt="Tag Icon in black and white" />
-                    <p class="tagElementColor"> {tags.join(", ")}</p>
-                </div>
+<body class="bg-white text-gray-900">
+<article class="max-w-3xl mx-auto px-6 py-10 leading-relaxed">
+    <div class="breadcrumbs text-sm">
+        <ul>
+            <li><a>Home</a></li>
+            <li><a>{title}</a></li>
+        </ul>
+    </div>
+    <header class="mb-8 space-y-2">
+        <p class="text-2xl font-bold">Paper #{number}</p>
+        <h1 class="text-3xl font-extrabold">{title}</h1>
+        <p class="text-sm text-gray-600">
+            {date} | {time} min read
+        </p>
+        <div class="tagElement mt-2">
+            <strong class="badge badge-warning">{tags.join(", ")}</strong>
+        </div>
+    </header>
 
-            </header>
-            <main>
-                <slot/>
-            </main>
-        </article>
-    </body>
+    <main class="prose text-justify prose-lg prose-gray max-w-none">
+        <slot/>
+    </main>
+</article>
+</body>
 </html>

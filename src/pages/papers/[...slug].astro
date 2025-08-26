@@ -4,6 +4,7 @@ import "../../styles/global.css";
 import Navigation from "../../components/Navigation.astro";
 import PaperLayout from "../../layouts/PaperLayout.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Prose from "../../components/Prose.astro";
 
 export async function getStaticPaths() {
     const papers = await getCollection("papers");
@@ -40,7 +41,9 @@ const middleValue = parts[1];
             time={wpm}
             tags={paper.data.tags}
     >
-        <Content />
+        <Prose>
+            <Content />
+        </Prose>
     </PaperLayout>
 </BaseLayout>
 

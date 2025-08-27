@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import "../../styles/global.css";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Scroll } from '@lucide/astro';
+
+const poems = await getCollection('poems');
+---
+
+<BaseLayout>
+    <h1 class="text-2xl font-bold">Poems</h1>
+
+    <ul class="list">
+        {poems.map(poems => (
+                <li class="list-row">
+                    <Scroll color="black" />
+                    <a href={`/poems/${poems.slug}/`}>
+                        <strong>{poems.data.title}</strong>
+                        <p> {poems.data.date} </p>
+                    </a>
+                </li>
+        ))}
+    </ul>
+</BaseLayout>
+

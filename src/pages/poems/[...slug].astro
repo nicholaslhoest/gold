@@ -1,29 +1,27 @@
 ---
 import { getCollection, getEntryBySlug, render } from 'astro:content';
 import "../../styles/global.css";
-import PaperLayout from "../../layouts/PaperLayout.astro";
+import PoemLayout from "../../layouts/PoemLayout.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Prose from "../../components/Prose.astro";
 
 export async function getStaticPaths() {
-    const papers = await getCollection("papers");
-    return papers.map((paper) => ({
-        params: { slug: paper.slug },
+    const poemCollection = await getCollection("poems");
+    return poemCollection.map((poem) => ({
+        params: { slug: poem.slug },
     }));
 }
 
 const { slug } = Astro.params;
-const paper = await getEntryBySlug("papers", slug);
+const poem = await getEntryBySlug("poems", slug);
 
-if (!paper) {
+if (!poem) {
     throw new Error(`Paper not found: ${slug}`);
 }
 
-const { Content } = await render(paper);  // Render Markdown body content
+const { Content } = await render(poem);  // Render Markdown body content
 
-const wpm = Math.round((paper.body.length/5)/214);
-
-const inputString = paper.slug;
+const inputString = poem.slug;
 
 // Split by hyphen
 const parts = inputString.split('-');
@@ -33,16 +31,14 @@ const middleValue = parts[1];
 
 ---
 <BaseLayout>
-    <PaperLayout
+    <PoemLayout
             number={middleValue}
-            title={paper.data.title}
-            date={paper.data.date}
-            time={wpm}
-            tags={paper.data.tags}
+            title={poem.data.title}
+            date={poem.data.date}
     >
         <Prose>
             <Content />
         </Prose>
-    </PaperLayout>
+    </PoemLayout>
 </BaseLayout>
 

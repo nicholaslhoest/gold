@@ -1,0 +1,23 @@
+---
+import { Copy } from "@lucide/astro"
+function myFunction() {
+    // Copy the text inside the text field
+    navigator.clipboard.writeText("hello@lhoest.net");
+
+    // Alert the copied text
+    alert("Copied email");
+}
+---
+<div class="hero min-h-screen">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+        <div>
+            <h1 class="text-4xl font-bold">Contact Me</h1>
+            <address class="hl-2">
+                hello@lhoest.net
+            </address>
+
+            <button class="btn" onclick="myFunction()"><Copy /></button>
+            <p>Just say hello</p>
+        </div>
+    </div>
+</div>

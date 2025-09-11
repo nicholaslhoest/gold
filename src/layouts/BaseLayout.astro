@@ -27,13 +27,9 @@ const {title, date, time, tags } = Astro.props;
 </aside> -->
 
 <!-- RIGHT CONTENT (shifted by sidebar width on lg+) -->
-<main class="min-h-screen lg:ml-[18rem]">
-    <div class="mx-auto max-w-prose px-4 sm:px-6 lg:px-8 py-10">
+<main class="flex-1 lg:ml-[18rem]">
+    <div class="mx-auto max-w-prose px-4 sm:px-6 lg:px-8 py-8">
         <slot />
     </div>
 </main>
-
-<footer class="lg:ml-[18rem] px-4 sm:px-6 lg:px-8 py-6">
-    <Footer />
-</footer>
 </body>

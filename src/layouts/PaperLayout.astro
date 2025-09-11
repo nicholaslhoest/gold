@@ -1,0 +1,36 @@
+---
+import "../styles/global.css";
+const { number, title, date, time, tags } = Astro.props;
+---
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{title}</title>
+</head>
+<body class="bg-white text-gray-900">
+<article class="max-w-3xl mx-auto px-6 py-10 leading-relaxed">
+    <div class="breadcrumbs text-sm">
+        <ul>
+            <li><a>Home</a></li>
+            <li><a>{title}</a></li>
+        </ul>
+    </div>
+    <header class="mb-8 space-y-2">
+        <p class="text-2xl font-bold">Paper #{number}</p>
+        <h1 class="text-3xl font-extrabold">{title}</h1>
+        <p class="text-sm text-gray-600">
+            {date} | {time} min read
+        </p>
+        <div class="tagElement mt-2">
+            <strong class="badge badge-warning">{tags.join(", ")}</strong>
+        </div>
+    </header>
+
+    <main class="prose text-justify prose-lg prose-gray max-w-none">
+        <slot/>
+    </main>
+</article>
+</body>
+</html>

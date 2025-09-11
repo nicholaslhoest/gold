@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+import "../../styles/global.css";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Scroll } from '@lucide/astro';
+
+const poems = await getCollection('poems');
+---
+
+<BaseLayout>
+    <h1 class="text-2xl font-bold">Poems</h1>
+
+    <blockquote class="p-8">
+        <p> <q> We don't read and write poetry because it's cute. We read and write poetry because we are members of the human race </q></p>
+        <p> - John Keating <a class="text-primary font-bold" href="https://www.youtube.com/watch?v=aS1esgRV4Rc"> (Dead Poet's Society) </a> 1989</p>
+    </blockquote>
+
+    <ul class="list">
+        {poems.map(poems => (
+                <li class="list-row">
+                    <Scroll color="black" />
+                    <a href={`/poems/${poems.slug}/`}>
+                        <strong>{poems.data.title}</strong>
+                        <p> {poems.data.date} </p>
+                    </a>
+                </li>
+        ))}
+    </ul>
+</BaseLayout>
+

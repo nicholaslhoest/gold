@@ -13,8 +13,8 @@ const { number, title, date, time, tags } = Astro.props;
 <article class="max-w-3xl mx-auto px-6 py-10 leading-relaxed">
     <div class="breadcrumbs text-sm">
         <ul>
-            <li><a>Home</a></li>
-            <li><a>{title}</a></li>
+            <li><a href="/papers/">Papers</a></li>
+            <li><a class="truncate max-w-xs">{title}</a></li>
         </ul>
     </div>
     <header class="mb-8 space-y-2">
@@ -23,8 +23,10 @@ const { number, title, date, time, tags } = Astro.props;
         <p class="text-sm text-gray-600">
             {date} | {time} min read
         </p>
-        <div class="tagElement mt-2">
-            <strong class="badge badge-warning">{tags.join(", ")}</strong>
+        <div class="tagElement mt-2 flex flex-wrap gap-2">
+            {(Array.isArray(tags) ? tags : tags.split(',').map(t => t.trim())).map(tag => (
+                    <span class="badge badge-warning font-bold">{tag}</span>
+            ))}
         </div>
     </header>
 

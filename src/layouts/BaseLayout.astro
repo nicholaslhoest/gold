@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Sidebar from "../components/Sidebar.astro";
+import Analytics from '@vercel/analytics/astro'
 
 const {title, date, time, tags } = Astro.props;
 ---
@@ -12,6 +13,7 @@ const {title, date, time, tags } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <Analytics />
 </head>
 <body data-theme="bumblebee" class="min-h-screen">
 

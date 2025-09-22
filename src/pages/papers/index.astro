@@ -5,22 +5,33 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { Paperclip } from '@lucide/astro';
 
 const papers = await getCollection('papers');
+
+const toTagsArray = (tags) =>
+    Array.isArray(tags)
+        ? tags
+        : typeof tags === 'string'
+            ? tags.split(',').map(t => t.trim()).filter(Boolean)
+            : [];
+
 ---
-
 <BaseLayout>
-
-    <h1 class="text-2xl font-bold">Papers</h1>
+    <h1 class="text-4xl my-4 font-bold">Papers</h1>
 
     <ul class="list">
         {papers.map(paper => (
                 <li class="list-row">
                     <Paperclip color="black" />
                     <a class="listPaperItem" href={`/papers/${paper.slug}/`}>
-                        <strong>{paper.data.title}</strong>
-                        <p> {paper.data.date} | {paper.data.tags.join(", ")} </p>
+                        <h2 class="font-bold">{paper.data.title}</h2>
+                        <p>{paper.data.date} | {Math.round((paper.body.length/5)/214)} min read</p>
+
+                        <div class="mt-2 flex flex-wrap gap-2">
+                            {toTagsArray(paper.data.tags).map(tag => (
+                                    <span class="badge badge-primary font-bold">{tag}</span>
+                            ))}
+                        </div>
                     </a>
                 </li>
         ))}
     </ul>
 </BaseLayout>
-

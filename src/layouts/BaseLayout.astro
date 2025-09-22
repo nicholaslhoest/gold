@@ -1,5 +1,4 @@
 ---
-import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 import Sidebar from "../components/Sidebar.astro";
 
@@ -15,21 +14,43 @@ const {title, date, time, tags } = Astro.props;
     <title>{{title}}</title>
 </head>
 <body data-theme="bumblebee" class="min-h-screen">
-<!-- LEFT SIDEBAR (overlay + takes space on lg+) -->
-<header role="navigation"
-        class="fixed inset-y-0 left-0 w-[18rem] bg-base-200 border-r z-40 hidden lg:block">
-    <Sidebar />
-</header>
 
-<!-- OPTIONAL: mobile overlay version (shown with a toggle you add elsewhere) -->
-<!-- <aside class="fixed inset-y-0 left-0 w-[18rem] bg-base-200 border-r z-50 lg:hidden hidden" id="mobile-drawer">
-  <Sidebar />
-</aside> -->
+<!-- Use one source of truth for width -->
+<div class="drawer lg:drawer-open" style="--sidebar: 18rem;">
+    <input id="site-drawer" type="checkbox" class="drawer-toggle" />
 
-<!-- RIGHT CONTENT (shifted by sidebar width on lg+) -->
-<main class="flex-1 lg:ml-[18rem]">
-    <div class="mx-auto max-w-prose px-4 sm:px-6 lg:px-8 py-8">
-        <slot />
+    <!-- Page content -->
+    <div class="drawer-content">
+        <!-- Mobile toggle button -->
+        <label for="site-drawer"
+               class="btn btn-ghost btn-circle fixed top-4 left-4 z-50 lg:hidden"
+               aria-label="Open menu">
+            <!-- hamburger -->
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </label>
+
+        <!-- Content (shifted on desktop) -->
+        <main class="flex-1 lg:ml-[var(--sidebar)]">
+            <div class="mx-auto max-w-prose px-4 sm:px-6 lg:px-8 py-8">
+                <slot />
+            </div>
+        </main>
     </div>
-</main>
+
+    <!-- Drawer panel -->
+    <div class="drawer-side">
+        <!-- overlay (clicking closes on mobile) -->
+        <label for="site-drawer" aria-label="close sidebar"
+               class="drawer-overlay transition-opacity duration-200"></label>
+
+        <!-- panel with slide animation -->
+        <aside class="h-full w-[var(--sidebar)] bg-stone-50 border-r
+                     transform transition-transform duration-300 ease-in-out">
+            <Sidebar />
+        </aside>
+    </div>
+</div>
 </body>
+</html>

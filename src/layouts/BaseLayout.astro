@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Sidebar from "../components/Sidebar.astro";
+import Analytics from '@vercel/analytics/astro'
 
 const {title, date, time, tags } = Astro.props;
 ---
@@ -11,7 +12,8 @@ const {title, date, time, tags } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{{title}}</title>
+    <title>{title}</title>
+    <Analytics />
 </head>
 <body data-theme="bumblebee" class="min-h-screen">
 
@@ -32,7 +34,7 @@ const {title, date, time, tags } = Astro.props;
         </label>
 
         <!-- Content (shifted on desktop) -->
-        <main class="flex-1 lg:ml-[var(--sidebar)]">
+        <main class="flex-1">
             <div class="mx-auto max-w-prose px-4 sm:px-6 lg:px-8 py-8">
                 <slot />
             </div>
@@ -46,7 +48,7 @@ const {title, date, time, tags } = Astro.props;
                class="drawer-overlay transition-opacity duration-200"></label>
 
         <!-- panel with slide animation -->
-        <aside class="h-full w-[var(--sidebar)] bg-stone-50 border-r
+        <aside class="h-full w-[var(--sidebar)] bg-stone-50
                      transform transition-transform duration-300 ease-in-out">
             <Sidebar />
         </aside>

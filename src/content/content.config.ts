@@ -7,7 +7,8 @@ const papers = defineCollection({
         title: z.string(),
         author: z.string(),
         date: z.string(),
-        tags: z.array(z.string()).optional(),
+        key: z.string(),
+        collection: z.string(),
     }),
 });
 

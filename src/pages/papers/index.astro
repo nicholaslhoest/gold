@@ -6,12 +6,15 @@ import { Paperclip } from '@lucide/astro';
 
 const papers = await getCollection('papers');
 
-const toTagsArray = (tags) =>
-    Array.isArray(tags)
-        ? tags
-        : typeof tags === 'string'
-            ? tags.split(',').map(t => t.trim()).filter(Boolean)
-            : [];
+const toConvertDate = (dateStr) => {
+    const date = new Date(dateStr);
+    return date.toLocaleDateString('en-US', {
+        weekday: 'short',
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric'
+    });
+};
 
 ---
 <BaseLayout title = "Papers - Collection of written work">
@@ -23,13 +26,7 @@ const toTagsArray = (tags) =>
                     <Paperclip color="black" />
                     <a class="listPaperItem" href={`/papers/${paper.slug}/`}>
                         <h2 class="font-bold">{paper.data.title}</h2>
-                        <p>{paper.data.date} | {Math.round((paper.body.length/5)/214)} min read</p>
-
-                        <div class="mt-2 flex flex-wrap gap-2">
-                            {toTagsArray(paper.data.tags).map(tag => (
-                                    <span class="badge badge-primary font-bold">{tag}</span>
-                            ))}
-                        </div>
+                        <p>{toConvertDate(paper.data.date)} | {Math.round((paper.body.length/5)/214)} min read</p>
                     </a>
                 </li>
         ))}

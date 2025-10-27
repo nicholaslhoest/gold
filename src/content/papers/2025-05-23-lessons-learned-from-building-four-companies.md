@@ -1,8 +1,13 @@
 ---
-title: 'Lessons learned from building four companies.'
-date: '2024-05-23'
-tags: ["business", "entrepreneurship"]
+title: Lessons learned from building four companies.
+descritpion: Summary of 4 companies developed and how they progressed
+date: 2024-05-23
+keys:
+  - "[[business]]"
+collection:
+  - "[[Fortune Feathers]]"
 ---
+# Lessons learned from building four companies.
 
 I have currently created four businesses. Each creation gave me insights into how my business could be improved based on what I learned from these adventures. These are my stories.
 

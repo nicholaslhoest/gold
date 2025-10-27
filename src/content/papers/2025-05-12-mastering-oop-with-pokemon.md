@@ -1,8 +1,14 @@
 ---
-title: 'Mastering Object-Oriented programming with Pokemon.'
-date: '2024-05-12'
-tags: ["code","java"]
+title: Mastering Object-Oriented programming with Pokemon.
+description:
+date: 2024-05-12
+keys:
+  - "[[code]]"
+  - "[[java]]"
+collection: "[[Dino Driver]]"
 ---
+# Mastering Object-Oriented programming with Pokemon.
+
 When I first started learning Object-Oriented Programming (OOP), it was challenging to visualize this concept without confusing myself. I could only understand the idea when I applied it to another topic. That’s my secret technique anytime I try to learn subjects. I use my pre-existing knowledge as a foundation for understanding new subjects. That pre-existing idea was Pokemon. Hopefully, Nintendo does not sue me for using their names to understand OOP, so please don’t let them know about this.
 
 When I was first introduced to OOP, my professor explained that it’s a programming paradigm that revolves around the concepts of “classes” and “objects,” which can contain data and methods. Hearing that for the first time did not help me get any closer to understanding it until I applied it to Pokemon.

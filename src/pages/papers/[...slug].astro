@@ -19,26 +19,18 @@ if (!paper) {
     throw new Error(`Paper not found: ${slug}`);
 }
 
-const { Content } = await render(paper);  // Render Markdown body content
+const { Content } = await render(paper);
 
 const wpm = Math.round((paper.body.length/5)/214);
-
-const inputString = paper.slug;
-
-// Split by hyphen
-const parts = inputString.split('-');
-
-// Get the middle value (index 1)
-const middleValue = parts[1];
 
 ---
 <BaseLayout>
     <PaperLayout
-            number={middleValue}
             title={paper.data.title}
             date={paper.data.date}
             time={wpm}
-            tags={paper.data.tags}
+            keys={paper.data.keys}
+            collection={paper.data.collection}
     >
         <Prose>
             <Content />

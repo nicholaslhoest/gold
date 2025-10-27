@@ -1,33 +1,46 @@
 ---
 import "../styles/global.css";
-const { number, title, date, time, tags } = Astro.props;
----
+const { title, date, time, keys, collection } = Astro.props;
 
+const toConvertDate = (dateStr) => {
+    const d = new Date(dateStr);
+    return isNaN(d)
+        ? String(dateStr)
+        : d.toLocaleDateString('en-US', {
+            weekday: 'short',
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric'
+        });
+};
+
+const toKeysArray = (keys) => {
+    if (!keys) return [];
+    const arr = Array.isArray(keys) ? keys : String(keys).split(',');
+    return arr.map(k => k.replace(/\[\[|\]\]/g, '').trim()).filter(Boolean);
+};
+
+const toKeysString = (keys) => toKeysArray(keys).join(', ');
+
+---
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
 </head>
 <body class="bg-white text-gray-900">
 <article class="max-w-3xl mx-auto px-6 py-10 leading-relaxed">
-    <div class="breadcrumbs text-sm">
-        <ul>
-            <li><a href="/papers/">Papers</a></li>
-            <li><a class="truncate max-w-xs">{title}</a></li>
-        </ul>
-    </div>
-    <header class="mb-8 space-y-2">
-        <p class="text-2xl font-bold">Paper #{number}</p>
-        <h1 class="text-3xl font-extrabold">{title}</h1>
+    <header class="mb-2 space-y-2">
         <p class="text-sm text-gray-600">
-            {date} | {time} min read
+            {toConvertDate(date)} | {time} min read
         </p>
-        <div class="tagElement mt-2 flex flex-wrap gap-2">
-            {(Array.isArray(tags) ? tags : tags.split(',').map(t => t.trim())).map(tag => (
-                    <span class="badge badge-warning font-bold">{tag}</span>
-            ))}
-        </div>
+
+        {keys && (
+                <p class="text-yellow-600">
+                    {toKeysString(keys)}
+                </p>
+        )}
     </header>
 
     <main class="prose text-justify prose-lg prose-gray max-w-none">

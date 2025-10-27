@@ -1,8 +1,13 @@
 ---
-title: 'How I created my unsuccessful design subscription service from idea to launch.'
-date: '2024-04-12'
-tags: ["design","logo"]
+title: How I created my unsuccessful design subscription service from idea to launch.
+description:
+date: 2024-04-12
+keys:
+  - "[[art]]"
+collection: "[[Fortune Feathers]]"
 ---
+# How I created my unsuccessful design subscription service from idea to launch.
+
 I will outline how I built my design subscription business, LhoestBrands, from concept to launch.
 
 Before going into the steps, let’s explain a design subscription service. In short, think of it like Netflix for design needs. Users can subscribe to a plan and make unlimited requests, but they can only get one item at a time, similar to watching only one episode on Netflix.

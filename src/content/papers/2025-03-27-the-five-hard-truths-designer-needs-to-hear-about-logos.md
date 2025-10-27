@@ -1,8 +1,12 @@
 ---
-title: 'The 5 hard truths a designer needs to hear about logos.'
-date: '2024-03-27'
-tags: ["design"]
+title: The 5 hard truths a designer needs to hear about logos.
+description:
+date: 2024-03-27
+keys:
+  - "[[art]]"
+collection: "[[Solar Shapes]]"
 ---
+# The 5 hard truths a designer needs to hear about logos.
 In today’s visually driven world, logos, from multinational corporations to local businesses and even personal brands, have become even more essential to our daily lives.
 
 Since there is a greater demand for logos, the supply of designers has also increased, leading to more design work, which is a fantastic outcome. However, with every change, there will be problems and benefits. One major issue is that new designers must be aware of some harsh truths about the logo creation process.

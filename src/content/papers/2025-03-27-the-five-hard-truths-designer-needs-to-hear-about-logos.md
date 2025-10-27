@@ -1,0 +1,77 @@
+---
+title: The 5 hard truths a designer needs to hear about logos.
+description:
+date: 2024-03-27
+keys:
+  - "[[art]]"
+collection: "[[Solar Shapes]]"
+---
+# The 5 hard truths a designer needs to hear about logos.
+In today’s visually driven world, logos, from multinational corporations to local businesses and even personal brands, have become even more essential to our daily lives.
+
+Since there is a greater demand for logos, the supply of designers has also increased, leading to more design work, which is a fantastic outcome. However, with every change, there will be problems and benefits. One major issue is that new designers must be aware of some harsh truths about the logo creation process.
+
+## A Logo is Not the Whole Story
+One of the biggest misconceptions about logos is that they should convey every little detail about the company. A logo does not need to explain what the company sells, its location, and how many employees work there.
+
+While a well-designed logo can communicate critical elements of your brand, it cannot convey every detail.
+
+Think of a logo as the guiding star rather than the entire constellation. Its purpose is to highlight critical aspects, prompting viewers to explore further.
+
+Not realizing this can cause your logo to be overly complicated for the sake of telling the whole story.
+
+## A Logo is the Who, Not the What
+Some designers believe that a company’s logo must reflect what the company sells to its customers. If you sell lamps, make a lamp logo. If you sell cars, put a car in the logo. Creating these kinds of logos is a good start.
+
+However, don’t limit your creative process to what the company is. Instead, focus on what the company wants to convey to the viewer. What should they feel when they see the logo? In short, who are you, not what are you?
+
+For example, Apple’s logo features a bitten apple. Now tell me, where does that logo say we sell phones that cost €2000? You don’t because that’s what they are, but it tells you who they are. The icon shows an elegant company that cares about the finer details.
+
+Don't believe go to [apple.com](https://www.apple.com/) and tell me you see an apple being sold on that site. 
+
+I’m not saying you can’t use the company’s name or product as inspiration. Just don’t limit yourself.
+
+Another example is that you wanted to make a pizza logo for a company. You could include a pizza in the logo or expand beyond the product and service, so don’t be afraid to experiment with more shapes.
+
+One of the biggest brands in the pizza market does not use a pizza in its logo but a domino. The domino symbolized the rows of pizza boxes falling on each other.
+
+## Guarantees of Success
+The logo creation process can take months and requires massive investments, but it means nothing, even with all the work and money.
+
+Some believe that once a business has a logo, success is inevitable. However, a logo is just one component of a company.
+
+Success requires consistent effort across various business aspects, including product quality, customer service, and marketing strategies.
+
+A logo can enhance brand visibility and credibility, but it alone cannot ensure success. It’s only one piece of the puzzle.
+
+Don’t feel guilty or embarrassed when a company fails when using your logo. It’s normal to blame oneself for this failure, but don’t let that stop you from creating more logos.
+
+## A Logo Can Evolve
+Logos are not made of stone but with pixels created by humans. Do you know what humans are good at? They are good at adapting as time progresses. That is the same with logos. They evolve.
+
+While consistency is essential for brand recognition, it’s also vital to recognize the need for evolution.
+
+Many successful companies have undergone logo redesigns to stay relevant and reflect evolving brand identities.
+
+Of course, evolution doesn’t mean abandoning the logo’s essence but refining it to align with the brand’s current vision and values.
+
+I mention this to say it’s sometimes appropriate to change your logo. It does not mean your logo was terrible; it is just that times change, and people change.
+
+Adaptability is Key
+In today’s dynamic landscape, a logo must be adaptable to different mediums, sizes, and contexts. It should maintain its integrity and recognition value, whether displayed on a billboard, a business card, or a digital platform.
+
+Flexibility in design ensures that the logo remains impactful and recognizable anywhere.
+
+In short, if I can’t recognize it on my pinky toe and blow it up on the Chinese wall, you have to redo it. Thus, it must be simple. Let me repeat that. It needs to be simple.
+
+Designers may need to express themselves and make their logos complicated to stand out. However, if they overcomplicate their logos, they lose the ability to adapt them to different mediums.
+
+Simple is okay; to make your simple logos stand out, make them distinct with a unique twist only you can do.
+
+## Final Remarks
+Logos are more than mere visual elements. They are extensions of an idea. I hope these harsh truths were not too hard to swallow. I say this only to the next generation of designers to create outstanding logos.
+
+Thank you for your time.
+
+Jump to LhoestBrands.com to capture attention and spark sales with our design services.
+

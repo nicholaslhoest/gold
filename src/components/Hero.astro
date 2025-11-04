@@ -1,16 +1,16 @@
 ---
 ---
-<script>
-    import gsap from "gsap";
-
-    gsap.from(".hero", {
-        y: 400,
-        opacity: 0,
-        duration: 0.75,
-        ease: "power3.out"
-        });
-</script>
 <div class="hero min-h-[100svh] flex flex-col justify-center items-center text-center">
+    <script>
+        import gsap from "gsap";
+
+        gsap.from(".hero", {
+            y: 400,
+            opacity: 0,
+            duration: 0.75,
+            ease: "power3.out"
+        });
+    </script>
     <div class="avatar">
         <div class="w-40 rounded-xl ring ring-primary ring-offset-base-100 ring-offset-2 mb-4">
             <img class="wizard" src="/stick-head-wizard.png" alt="Stick Wizard" />
@@ -27,5 +27,4 @@
         <p>
         Gamer. Coder. Designer.
         </p>
-    </div>
 </div>

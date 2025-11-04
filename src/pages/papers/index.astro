@@ -24,7 +24,7 @@ const toConvertDate = (dateStr) => {
         {papers.map(paper => (
                 <li class="list-row">
                     <Paperclip color="black" />
-                    <a class="listPaperItem" href={`/papers/${paper.slug}/`}>
+                    <a class="listPaperItem hover:text-yellow-600" href={`/papers/${paper.slug}/`}>
                         <h2 class="font-bold">{paper.data.title}</h2>
                         <p>{toConvertDate(paper.data.date)} | {Math.round((paper.body.length/5)/214)} min read</p>
                     </a>

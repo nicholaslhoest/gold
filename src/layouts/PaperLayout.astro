@@ -23,14 +23,7 @@ const toKeysArray = (keys) => {
 const toKeysString = (keys) => toKeysArray(keys).join(', ');
 
 ---
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-</head>
-<body class="bg-white text-gray-900">
-<article class="max-w-3xl mx-auto px-6 py-10 leading-relaxed">
+<article class="max-w-3xl mx-auto px-6 py-10 leading-relaxed text-gray-900">
     <header class="mb-2 space-y-2">
         <p class="text-sm text-gray-600">
             {toConvertDate(date)} | {time} min read
@@ -47,5 +40,3 @@ const toKeysString = (keys) => toKeysArray(keys).join(', ');
         <slot/>
     </main>
 </article>
-</body>
-</html>

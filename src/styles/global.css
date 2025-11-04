@@ -35,3 +35,17 @@
     --depth: 1;
     --noise: 0;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html, body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+    cursor: url('/public/black-point-basic.png'), auto;
+}
+
+a:hover, button:hover {
+    cursor: url('/public/black-point-hover.png'), auto;
+}

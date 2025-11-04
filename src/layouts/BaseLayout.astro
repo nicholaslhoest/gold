@@ -9,7 +9,7 @@ const {title, date, time, tags } = Astro.props;
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -35,7 +35,7 @@ const {title, date, time, tags } = Astro.props;
 
         <!-- Content (shifted on desktop) -->
         <main class="flex-1">
-            <div class="mx-auto max-w-prose px-4 sm:px-6 lg:px-8 py-8">
+            <div class="mx-auto max-w-prose">
                 <slot />
             </div>
         </main>

@@ -24,9 +24,8 @@ const { Content } = await render(paper);
 const wpm = Math.round((paper.body.length/5)/214);
 
 ---
-<BaseLayout>
+<BaseLayout title={paper.data.title}>
     <PaperLayout
-            title={paper.data.title}
             date={paper.data.date}
             time={wpm}
             keys={paper.data.keys}

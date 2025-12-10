@@ -43,9 +43,9 @@
 html, body {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;     /* Firefox */
-    cursor: url('/public/black-point-basic.png'), auto;
+    cursor: url('/public/black-point-basic.png') 3 3, auto;
 }
 
 a:hover, button:hover {
-    cursor: url('/public/black-point-hover.png'), auto;
+    cursor: url('/public/black-point-hover.png') 3 3, auto;
 }

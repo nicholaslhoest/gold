@@ -1,20 +1,27 @@
 ---
 import { House, Paperclip, Hourglass, Scroll, Gamepad2, Folder, Palette, Mail, Settings   } from '@lucide/astro';
-import Footer from "./Footer.astro";
+import MusicPlayer from "./MusicPlayer.astro";
 ---
 
-<ul class="menu bg-stone-50 text-base-content min-h-full w-full p-4">
-    <a class="btn btn-ghost" href="/"><img src="/nicoest-logo-tiny.png" alt="Stick Wizard" /></a>
+<div class="min-h-full flex flex-col justify-between">
 
-    <!--<a class="btn btn-ghost text-xl" href="/">Lhoest</a>-->
-    <!-- Sidebar content here -->
-    <li><a href="/"><House color="black" /> Home </a></li>
-    <li><a href="/papers/"><Paperclip color="black" /> Papers</a></li>
-    <!--<li><a href="/hourglass/"><Hourglass color="black" /> Hourglass</a></li>-->
-    <!--<li><a href="/poems/"><Scroll color="black" /> poems</a></li>-->
-    <!--<li><a href="/"><Gamepad2 color="black" /> games</a></li>-->
-    <!--<li><a href="/"><Folder color="black" /> projects</a></li>-->
-    <!--<li><a href="/art"><Palette color="black" /> art</a></li>-->
-    <!--<li><a href="/contact"><Mail color="black" /> contact</a></li>-->
-    <!--<li><a href="/"><Settings color="black" /> settings</a></li>-->
-</ul>
+    <div class="p-4">
+        <a class="flex justify-center" href="/"><img src="/nicoest-logo-tiny.png" alt="Stick Wizard"/></a>
+        <ul class="menu bg-stone-50 w-full text-base-content">
+            <!-- Sidebar content here -->
+            <li><a href="/"><House color="black" /> Home </a></li>
+            <li><a href="/papers/"><Paperclip color="black" /> Papers</a></li>
+            <!--<li><a href="/hourglass/"><Hourglass color="black" /> Hourglass</a></li>-->
+            <!--<li><a href="/poems/"><Scroll color="black" /> poems</a></li>-->
+            <!--<li><a href="/"><Gamepad2 color="black" /> games</a></li>-->
+            <!--<li><a href="/"><Folder color="black" /> projects</a></li>-->
+            <!--<li><a href="/art"><Palette color="black" /> art</a></li>-->
+            <!--<li><a href="/contact"><Mail color="black" /> contact</a></li>-->
+            <!--<li><a href="/"><Settings color="black" /> settings</a></li>-->
+        </ul>
+    </div>
+
+    <div class="p-4">
+        <p> @ 2025 lhoest.net.</p>
+    </div>
+</div>

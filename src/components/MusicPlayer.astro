@@ -1,13 +1,13 @@
 ---
 ---
-<div class="w-full content-center pt-5">
+<div class="content-center">
     <button
             id="music-toggle"
             class="btn btn-primary"
             type="button"
             aria-pressed="false"
     >
-        Play Music
+        SoundTrack
     </button>
 </div>
 
@@ -21,7 +21,7 @@
         if (audio.paused) {
             try {
                 await audio.play();
-                btn.textContent = "Pause Music";
+                btn.textContent = "Soundtrack";
                 btn.className = "btn btn-default"
                 btn.setAttribute("aria-pressed", "true");
             } catch (err) {
@@ -29,7 +29,7 @@
             }
         } else {
             audio.pause();
-            btn.textContent = "Play Music";
+            btn.textContent = "Soundtrack";
             btn.className = "btn btn-primary"
             btn.setAttribute("aria-pressed", "false");
         }

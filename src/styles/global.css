@@ -3,9 +3,10 @@
 @plugin "daisyui";
 @plugin "daisyui/theme" {
     name: "bumblebee";
-    default: false;
+    default: true;
     prefersdark: false;
     color-scheme: "light";
+
     --color-base-100: oklch(100% 0 0);
     --color-base-200: oklch(97% 0 0);
     --color-base-300: oklch(92% 0 0);
@@ -36,16 +37,60 @@
     --noise: 0;
 }
 
+/* DARK THEME VARIANT */
+@plugin "daisyui/theme" {
+    name: "bumblebee-dark";
+    default: false;
+    prefersdark: true;
+    color-scheme: "dark";
+
+    /* tweak these to taste – starting point: darker bases, lighter text */
+    --color-base-100: oklch(22% 0.02 260);      /* page background */
+    --color-base-200: oklch(18% 0.02 260);
+    --color-base-300: oklch(14% 0.02 260);
+    --color-base-content: oklch(95% 0.02 260);  /* main text */
+
+    --color-primary: oklch(75% 0.2 91.936);
+    --color-primary-content: oklch(18% 0.02 260);
+
+    --color-secondary: oklch(70% 0.18 55.934);
+    --color-secondary-content: oklch(15% 0.03 260);
+
+    --color-accent: oklch(90% 0.1 95);
+    --color-accent-content: oklch(20% 0.02 260);
+
+    --color-neutral: oklch(30% 0.02 260);
+    --color-neutral-content: oklch(92% 0.02 260);
+
+    --color-info: oklch(75% 0.16 232.661);
+    --color-info-content: oklch(20% 0.02 260);
+    --color-success: oklch(73% 0.18 163.223);
+    --color-success-content: oklch(15% 0.03 260);
+    --color-warning: oklch(80% 0.19 84.429);
+    --color-warning-content: oklch(18% 0.04 60);
+    --color-error: oklch(70% 0.19 22.216);
+    --color-error-content: oklch(18% 0.03 25);
+
+    --radius-selector: 1rem;
+    --radius-field: 0.5rem;
+    --radius-box: 1rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
+}
+
 ::-webkit-scrollbar {
     display: none;
 }
 
 html, body {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
-    cursor: url('/public/black-point-basic.png') 3 3, auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    cursor: url('/black-point-basic.png') 3 3, auto;
 }
 
 a:hover, button:hover {
-    cursor: url('/public/black-point-hover.png') 3 3, auto;
+    cursor: url('/black-point-hover.png') 3 3, auto;
 }
